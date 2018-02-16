@@ -1,0 +1,92 @@
+doctype html
+html xmlns="http://www.w3.org/1999/xhtml"
+    head
+        title cordx.net
+        meta http-equiv="content-type" content="text/html; charset=utf-8"
+        meta name="viewport" content="width=device-width, initial-scale=1"
+        script [type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+                crossorigin="anonymous"]
+        link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cuprum|Open+Sans&amp;subset=cyrillic"
+        link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
+        link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        script type="text/javascript" src="/layout/js/n2d.js"
+        link type="text/css" rel="stylesheet" href="/layout/css/n2d.css"
+
+    body
+        .header
+            .header-wrapper
+                a.sitename href="https://cordx.net/" cordx.net
+                .sitemenu
+                    ul
+                        li.sitemenuDropdown
+                            span
+                            span
+                            span
+                        li: a href="#profile" Profile
+                        li: a href="#works" Works
+                        li: a href="#contact" Contact
+
+        .wrapper
+            .section style="background-image: url(/layout/img/cherry_2.jpg); background-position: center bottom;"
+                .block
+                    .content
+                        h1 style="font-weight: 300;" Welcome to cordx56's webpage
+                        p This webpage was made for archive my works.
+            #profile.section.shadow-front
+                .block
+                    h1.title Profile
+                    .content
+                        table.border
+                            tr
+                                td colspan=99
+                                    span style="font-size: 1.2em;" Kaoru Tisen
+                                    span< style="font-size: 0.8em;" (handle)
+                            tr
+                                th Skill / Studying
+                                td
+                                    |   Go, Kotlin, Python, PHP, <br />
+                                        nginx, Apache, Linux security
+                            tr
+                                th Interests
+                                td Piano, Camera, Russia
+                            tr
+                                th Membership
+                                td
+                                    |   College Society Jazz Orchestra, <br />
+                                        Digicre
+                            tr
+                                th colspan=99 Bio
+                            tr
+                                td 2017 -
+                                td
+                                    |   Undergraduate student at Shibaura Institute of Technology, <br />
+                                        Information Science and Engineering
+            #works.section.shadow-back.black-base.dynamic-bg
+                .dynamic-bg-img style="background-image: url(/layout/img/hongomc_bg.jpg);"
+                .block
+                    h1.title Works
+                    .content
+                        h2: a href="http://hongomc.net/" target="_blank" hongomc.net
+                        p Hongo Microcomputer Club Webpage
+            #contact.section.shadow-front
+                .block
+                    h1.title Link / Contact
+                    .content
+                        p
+                            |   If you have any questions, please send me an email.<br />
+                                You can find my email address at <a href="https://github.com/cordx56/" target="_blank">my GitHub profile page</a>.<br />
+                        p
+                            |   I can also reply to your message on these means: <br />
+                            span.left-indent: a[href="https://twitter.com/cordx56/" target="_blank"] Twitter<br />
+                            span.left-indent Slack: @cordx56
+
+        .footer
+            p
+                a.contact[href="https://twitter.com/cordx56/" target="_blank"]
+                    | <i class="fa fa-twitter" aria-hidden="true"></i> cordx56
+                a.contact[href="https://github.com/cordx56/" target="_blank"]
+                    | <i class="fa fa-github" aria-hidden="true"></i> cordx56
+                span.contact
+                    | <i class="fa fa-slack" aria-hidden="true"></i> cordx56
+            p &copy; 2018 cordx56
