@@ -1,7 +1,0 @@
-
-
-@mixin prefix($property, $value) {
-    @each $prefix in -webkit-, -moz-, -ms-, '' {
-        #{$prefix}#{$property}: $value;
-    }
-}
