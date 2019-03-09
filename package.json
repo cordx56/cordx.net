@@ -11,7 +11,7 @@
     "build": "npm run build:all",
     "build:all": "`npm bin`/npm-run-all -s build:pug build:scss copy-files",
     "build:pug": "`npm bin`/pug -P -o ./dest/ ./src/",
-    "build:scss": "`npm bin`/node-sass -o ./dest/ -r ./src/",
+    "build:scss": "`npm bin`/node-sass --output-style compressed -o ./dest/ -r ./src/",
     "watch": "npm run watch:all",
     "watch:all": "`npm bin`/npm-run-all -p watch:pug watch:scss watch:files",
     "watch:pug": "`npm bin`/chokidar './src/**/*.pug' -c 'npm run build:pug'",
