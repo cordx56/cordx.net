@@ -1,8 +1,9 @@
 var ghpages = require("gh-pages");
 
 ghpages.publish("./dest", {
+		branch: "master",
 		user: {
-			name: "Kaoru Tisen",
+			name: "Kaoru Chisen",
 			email: "cordx56@cordx.net"
 		},
 		message: "Web page AUTO UPDATE [ci skip]"
