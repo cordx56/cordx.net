@@ -3,7 +3,7 @@ jobs:
   build:
     branches:
       only:
-        - master
+        - source
     docker:
       - image: node:11
     steps:
