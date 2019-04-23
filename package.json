@@ -32,7 +32,7 @@
   "homepage": "https://github.com/cordx56/cordx56-static-web-template#readme",
   "devDependencies": {
     "bootstrap": "^4.3.1",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.4",
     "chokidar-cli": "^1.2.2",
     "gh-pages": "^2.0.1",
     "jstransformer-markdown-it": "^2.1.0",
