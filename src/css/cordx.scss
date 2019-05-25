@@ -10,6 +10,9 @@ $theme-colors: (
     "accent": #bc0000
 );
 
+$font-family-sans-serif: "IBM Plex Sans", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+$font-family-monospace: "IBM Plex Mono", Consolas, "Courier New", monospace;
+
 // Import Bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
