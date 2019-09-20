@@ -5,7 +5,7 @@ jobs:
       only:
         - source
     docker:
-      - image: node:11
+      - image: node:12
     steps:
       - checkout
       - restore_cache:
