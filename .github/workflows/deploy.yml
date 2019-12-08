@@ -1,0 +1,35 @@
+name: Deploy gh-pages
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:13
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules 
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+      - name: Setup
+        run: yarn install
+      - name: Build
+        run: yarn build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BASE_BRANCH: source
+          BRANCH: master
+          FOLDER: dist
