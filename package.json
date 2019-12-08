@@ -1,43 +1,33 @@
 {
-  "name": "cordx56-static-web-template",
-  "version": "0.1.0",
-  "description": "cordx56's web page build template",
-  "main": "index.js",
+  "name": "cordx56.github.io",
+  "version": "1.0.0",
+  "description": "cordx56&#39;s webpage",
+  "author": "Kaoru Chisen",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "rm -rf ./dest && npm run build && node ./scripts/deploy.js",
-    "start": "npm run build && `npm bin`/npm-run-all -p watch:all server:start",
-    "server:start": "`npm bin`/browser-sync start -s ./dest/ --port 8081 -f ./dest/**",
-    "build": "npm run build:all",
-    "build:all": "`npm bin`/npm-run-all -s build:pug build:scss copy-files",
-    "build:pug": "`npm bin`/pug -P -o ./dest/ ./src/",
-    "build:scss": "`npm bin`/node-sass --output-style compressed -o ./dest/ -r ./src/",
-    "watch": "npm run watch:all",
-    "watch:all": "`npm bin`/npm-run-all -p watch:pug watch:scss watch:files",
-    "watch:pug": "`npm bin`/chokidar './src/**/*.pug' -c 'npm run build:pug'",
-    "watch:scss": "`npm bin`/chokidar './src/**/*.scss' './src/**/*.sass' -c 'npm run build:scss'",
-    "watch:files": "`npm bin`/chokidar './src/**/*' -c 'npm run copy-files'",
-    "copy-files": "mkdir -p ./dest && cd ./src && find ./ -type f | grep -iEv '\\.(pug|slim|scss)$' | xargs -r cp --parents -u -t ../dest ; cd ../",
-    "update-html-indent": "find ./dest -type f | grep -iE '\\.(html|htm)$' | xargs sed -i -r 's/^( +)/\\1\\1/g'"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cordx56/cordx56-static-web-template.git"
+  "dependencies": {
+    "nuxt": "^2.0.0"
   },
-  "author": "cordx56 <cordx56@cordx.net>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cordx56/cordx56-static-web-template/issues"
-  },
-  "homepage": "https://github.com/cordx56/cordx56-static-web-template#readme",
   "devDependencies": {
-    "bootstrap": "^4.3.1",
-    "browser-sync": "^2.26.7",
-    "chokidar-cli": "^1.2.3",
-    "gh-pages": "^2.0.1",
-    "jstransformer-markdown-it": "^2.1.0",
-    "node-sass": "^4.12.0",
-    "npm-run-all": "^4.1.5",
-    "pug-cli": "^1.0.0-alpha6"
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "node-sass": "^4.13.0",
+    "nuxt-fontawesome": "^0.4.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.0"
   }
 }

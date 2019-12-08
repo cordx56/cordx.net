@@ -1,3 +1,22 @@
-# cordx.net - cordx56's portfolio website
-[![CircleCI](https://circleci.com/gh/cordx56/cordx56.github.io/tree/source.svg?style=svg)](https://circleci.com/gh/cordx56/cordx56.github.io/tree/source)  
-Please visit [cordx.net](https://cordx.net/).  
+# cordx56.github.io
+
+> cordx56&#39;s webpage
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn dev
+
+# build for production and launch server
+$ yarn build
+$ yarn start
+
+# generate static project
+$ yarn generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
