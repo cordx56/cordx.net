@@ -2,8 +2,8 @@
   .bg-gray-200.p-2
     .container.flex.flex-wrap.mx-auto
       div(class="w-full sm:w-1/4")
-        img.profile-img.mx-auto(src="https://github.com/cordx56.png")
-      div.text-center(class="w-full sm:w-3/4 sm:pt-4 sm:text-left")
+        //img.profile-img.mx-auto(src="https://github.com/cordx56.png")
+      div.text-center(class="w-full sm:w-3/4 sm:py-4 sm:text-left")
         h1.text-5xl Kaoru @cordx56
         ul.flex(class="justify-center sm:justify-start")
           li.mr-8
