@@ -54,6 +54,7 @@ a:hover {
 .index {
   font-family: "IBM Plex Sans",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
 }
+.svg-inline--fa {}
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
