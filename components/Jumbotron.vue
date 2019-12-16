@@ -7,12 +7,12 @@
         h1.text-5xl Kaoru @cordx56
         ul.flex(class="justify-center sm:justify-start")
           li.mr-8
-            h4
+            h3
               a.text-teal-500(class="hover:text-teal-700", href="https://github.com/cordx56", target="_blank")
                 fa(:icon="['fab', 'github']")
                 |  GitHub
           li
-            h4
+            h3
               a.text-teal-500(class="hover:text-teal-700", href="mailtoi:cordx56@cordx.net")
                 fa(:icon="['far', 'envelope']")
                 |  email
