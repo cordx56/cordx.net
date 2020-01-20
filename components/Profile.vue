@@ -15,8 +15,8 @@
             p Programming lang.
             ul.list-disc.pl-6.mb-4
               li Python
+              li C++
               li Haskell
-              li Rust
             p Environment
             ul.list-disc.pl-6
               li
