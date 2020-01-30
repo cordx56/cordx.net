@@ -1,4 +1,4 @@
-# cordx56.github.io
+# cordx56.github.io ![](https://github.com/cordx56/cordx56.github.io/workflows/Deploy%20gh-pages/badge.svg)
 
 > cordx56&#39;s webpage
 
