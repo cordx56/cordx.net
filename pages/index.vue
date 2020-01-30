@@ -1,12 +1,14 @@
-<template lang="pug">
-  div.index
-    Header
-    Jumbotron
-    .container.flex.mx-auto.my-4.justify-between.flex-wrap.px-4
-      Profile.px-4.mb-4(class="w-full lg:w-1/2")
-      Works.px-4.mb-4(class="w-full lg:w-1/2")
-      Links.px-4.mb-4(class="w-full lg:w-1/2")
-    Footer
+<template>
+  <div class="index">
+    <Header />
+    <Jumbotron />
+    <div class="container flex mx-auto my-4 justify-between flex-wrap px-4">
+      <Profile class="w-full px-4 mb-4 lg:w-1/2" />
+      <Works class="w-full px-4 mb-4 lg:w-1/2" />
+      <Links class="w-full px-4 mb-4 lg:w-1/2" />
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
