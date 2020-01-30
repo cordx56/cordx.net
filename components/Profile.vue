@@ -20,7 +20,6 @@
             <ul class="list-disc pl-6 mb-4">
               <li>Python</li>
               <li>C++</li>
-              <li>Haskell</li>
             </ul>
             <p>Environment</p>
             <ul class="list-disc pl-6">
