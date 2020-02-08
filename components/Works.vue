@@ -10,6 +10,13 @@
         </h3>
         <p>Hongo Microcomputer Club webpage</p>
       </li>
+      <li>
+        <h3>
+          <a href="https://markov.cordx.net/" target="_blank">Tweet generator</a>
+          <small> (2019)</small>
+        </h3>
+        <p>Markov-chain text generator</p>
+      </li>
     </ul>
     <h2>System, Library</h2>
     <ul class="list-disc pl-6 pb-4">
