@@ -5,12 +5,6 @@
     </div>
     <div class="w-full sm:w-2/3 p-4">
       <profile />
-      <h1 class="title">
-        meishi
-      </h1>
-      <h2 class="subtitle">
-        digital Meishi webpage
-      </h2>
       <links />
     </div>
   </div>
