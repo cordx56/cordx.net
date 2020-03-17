@@ -11,32 +11,19 @@
       <h2 class="subtitle">
         digital Meishi webpage
       </h2>
-      <div class="links mt-4 mb-4">
-        <a
-          href="https://cordx.net/"
-          target="_blank"
-          class="bg-transparent hover:bg-teal-600 text-teal-700 hover:text-white px-6 py-3 mx-4 border border-teal-600 rounded"
-        >
-          Portfolio
-        </a>
-        <a
-          href="https://github.com/cordx56"
-          target="_blank"
-          class="bg-transparent hover:bg-gray-700 text-gray-700 hover:text-white px-6 py-3 mx-4 border border-gray-700 rounded"
-        >
-          GitHub
-        </a>
-      </div>
+      <links />
     </div>
   </div>
 </template>
 
 <script>
 import Profile from '~/components/meishi/Profile.vue'
+import Links from '~/components/meishi/Links.vue'
 
 export default {
   components: {
-    Profile
+    Profile,
+    Links
   }
 }
 </script>
