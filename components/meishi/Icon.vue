@@ -1,7 +1,7 @@
 <template>
   <div @click="qrflip">
     <img ref="iconimg" class="mx-auto" src="https://github.com/cordx56.png">
-    <vue-qrcode ref="iconqr" class="mx-auto hidden" value="https://cordx.net/" />
+    <vue-qrcode ref="iconqr" class="mx-auto block hidden" value="https://cordx.net/" />
   </div>
 </template>
 
