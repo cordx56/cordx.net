@@ -6,7 +6,7 @@
       </div>
       <div class="w-full text-center sm:w-3/4 sm:py-4 sm:text-left">
         <h1 class="text-5xl">
-          Kaoru @cordx56
+          @cordx56
         </h1>
         <ul class="flex justify-center sm:justify-start">
           <li class="mr-8">

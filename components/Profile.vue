@@ -5,14 +5,6 @@
       <tbody>
         <tr>
           <th>
-            <fa :icon="['fas', 'pen-fancy']" class="text-3xl" />
-          </th>
-          <td>
-            <h2>Kaoru Chisen</h2>
-          </td>
-        </tr>
-        <tr>
-          <th>
             <fa :icon="['fas', 'tools']" class="text-3xl" />
           </th>
           <td>
