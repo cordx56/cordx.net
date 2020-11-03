@@ -20,7 +20,9 @@ jobs:
       - name: Setup
         run: yarn install
       - name: Build
-        run: yarn generate
+        run: yarn build
+      - name: Export
+        run: yarn export
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
@@ -28,4 +30,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BASE_BRANCH: source
           BRANCH: master
-          FOLDER: dist
+          FOLDER: out
