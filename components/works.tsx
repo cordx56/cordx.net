@@ -9,13 +9,6 @@ export default class Works extends React.Component {
         <ul className="list-disc pl-6 pb-4">
           <li>
             <h3 className="text-2xl">
-              <a href="http://hongomc.net/" target="_blank">hongomc.net</a>
-              <small> (2014-2016)</small>
-            </h3>
-            <p>Hongo Microcomputer Club webpage</p>
-          </li>
-          <li>
-            <h3 className="text-2xl">
               <a href="https://markov.cordx.net/" target="_blank">Tweet generator</a>
               <small> (2019)</small>
             </h3>
