@@ -1,12 +1,13 @@
 import React from 'react'
 import axios from 'axios'
 
-export default class Profile extends React.Component {
+interface State {
+  ghdata?: any
+}
+
+export default class Profile extends React.Component<{}, State> {
   state = {
-    ghdata: {
-      name: '',
-      login: '',
-    }
+    ghdata: undefined
   }
   constructor(props) {
     super(props)
@@ -22,13 +23,19 @@ export default class Profile extends React.Component {
       })
   }
   render() {
-    return (
-      <div>
-        <h1 className="text-4xl font-light">{ this.state.ghdata.name }</h1>
-        <h5 className="text-lg text-gray-700">
-          @{ this.state.ghdata.login }
-        </h5>
-      </div>
-    )
+    if (this.state.ghdata) {
+      return (
+        <div>
+          <h1 className="text-4xl font-light">{ this.state.ghdata.name }</h1>
+          <h5 className="text-lg text-gray-700">
+            @{ this.state.ghdata.login }
+          </h5>
+        </div>
+      )
+    } else {
+      return (
+        <div></div>
+      )
+    }
   }
 }
