@@ -3,6 +3,7 @@ import Jumbotron from '../components/jumbotron'
 import Profile from '../components/profile'
 import Works from '../components/works'
 import Links from '../components/links'
+import Footer from '../components/footer'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
@@ -28,6 +29,7 @@ export default function IndexPage() {
           <Links />
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
