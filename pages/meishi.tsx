@@ -12,7 +12,7 @@ export default function IndexPage() {
       <div className="w-full sm:w-1/3">
         <Icon />
       </div>
-      <div className="w-full sm:w-2/3 p-4">
+      <div className="w-full sm:w-2/3 p-4 text-center sm:text-left">
         <Profile />
         <Links />
       </div>
