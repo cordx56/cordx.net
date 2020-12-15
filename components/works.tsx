@@ -8,8 +8,8 @@ export default function Works() {
       <ul className="list-disc pl-6 pb-4">
         <li>
           <h3 className="text-2xl">
-            <a href="https://markov.cordx.net/" target="_blank">Tweet generator</a>
-            <small> (2019)</small>
+            <a href="https://tweetgen.cordx.net/" target="_blank">Tweet generator</a>
+            <small> (2019-2020)</small>
           </h3>
           <p>Markov-chain text generator</p>
         </li>
