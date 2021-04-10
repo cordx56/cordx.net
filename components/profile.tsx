@@ -38,10 +38,28 @@ export default function Profile() {
             </td>
           </tr>
           <tr className="border-b">
-            <td className="px-2 py-2">2020/08-</td>
+            <td className="px-2 py-2">2020/08 - Present</td>
             <td className="px-2 py-2">
               Gaiax Internship
               <small> (Django/React/TypeScript/Vue.js/AWS)</small>
+            </td>
+          </tr>
+
+          <tr className="border-b">
+            <td colSpan={99} className="px-2 py-2">
+              <h2 className="text-3xl">Certificate</h2>
+            </td>
+          </tr>
+          <tr className="border-b">
+            <td className="px-2 py-2">2018/05</td>
+            <td className="px-2 py-2">
+              基本情報技術者試験(FE)
+            </td>
+          </tr>
+          <tr className="border-b">
+            <td className="px-2 py-2">2018/12</td>
+            <td className="px-2 py-2">
+              応用情報技術者試験(AP)
             </td>
           </tr>
         </tbody>
