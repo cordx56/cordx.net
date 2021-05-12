@@ -19,9 +19,16 @@ export default function Works() {
         <li>
           <h3 className="text-2xl">
             <a href="https://silang.cordx.net/" target="_blank">SILang</a>
-            <small> (2019)</small>
+            <small> (2019-2021)</small>
           </h3>
           <p>Simple Interpreter Language, silang interpreter implementation</p>
+        </li>
+        <li>
+          <h3 className="text-2xl">
+            <a href="https://slip.cordx.net/" target="_blank">slip</a>
+            <small> (2021)</small>
+          </h3>
+          <p>Small LIsP language compiler</p>
         </li>
         <li>
           <h3 className="text-2xl">
