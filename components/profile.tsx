@@ -53,13 +53,13 @@ export default function Profile() {
           <tr className="border-b">
             <td className="px-2 py-2">2018/05</td>
             <td className="px-2 py-2">
-              基本情報技術者試験(FE)
+              基本情報技術者試験(FE) 合格
             </td>
           </tr>
           <tr className="border-b">
             <td className="px-2 py-2">2018/12</td>
             <td className="px-2 py-2">
-              応用情報技術者試験(AP)
+              応用情報技術者試験(AP) 合格
             </td>
           </tr>
         </tbody>
