@@ -1,7 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTools } from '@fortawesome/free-solid-svg-icons'
-import { faIdCard } from '@fortawesome/free-regular-svg-icons'
 
 export default function Profile() {
   return (
@@ -42,6 +39,14 @@ export default function Profile() {
             <td className="px-2 py-2">
               Gaiax Internship
               <small> (Django/React/TypeScript/Vue.js/AWS)</small>
+            </td>
+          </tr>
+          <tr className="border-b">
+            <td className="px-2 py-2">2021/08 - 2021/09</td>
+            <td className="px-2 py-2">
+              <a href="https://cordx56.hatenablog.com/entry/2021/09/10/185455" target="_blank">
+                DMM GUILD (Internship)
+              </a>
             </td>
           </tr>
 
