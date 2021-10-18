@@ -1,6 +1,6 @@
-import { Environment } from '../environment';
-import { getData } from '../files';
-import { homePath, getAbsolutePath } from '../pathtools';
+import { Environment } from "../environment";
+import { getData } from "../files";
+import { homePath, getAbsolutePath } from "../pathtools";
 
 export const cd = (env: Environment, args: string[]): Environment => {
   if (args.length === 0) {
@@ -8,7 +8,7 @@ export const cd = (env: Environment, args: string[]): Environment => {
   } else if (args.length === 1) {
     const absPath = getAbsolutePath(env.pwd, args[0]);
     const data = getData(absPath);
-    if (typeof data === 'object' && data !== null) {
+    if (typeof data === "object" && data !== null) {
       return { terminal: env.terminal, pwd: absPath, lastReturn: 0 };
     } else {
       env.terminal.writeln(`Error: ${args[0]} is not a directory`);

@@ -1,37 +1,37 @@
-export const homePath = '/home/cordx56';
+export const homePath = "/home/cordx56";
 
 export const formatPath = (path: string): string => {
-  const pathArray = path.split('/').filter((value) => 0 < value.length);
-  if (path[0] === '/') {
-    return '/' + pathArray.join('/');
+  const pathArray = path.split("/").filter((value) => 0 < value.length);
+  if (path[0] === "/") {
+    return "/" + pathArray.join("/");
   } else {
-    return pathArray.join('/');
+    return pathArray.join("/");
   }
 };
 
 export const getAbsolutePath = (pwd: string, path: string): string => {
   if (0 < path.length) {
     let joined: string;
-    if (path[0] === '/') {
+    if (path[0] === "/") {
       joined = path;
     } else {
-      joined = pwd + '/' + path;
+      joined = pwd + "/" + path;
     }
-    const splited = joined.split('/');
+    const splited = joined.split("/");
     const result = [];
     for (const value of splited) {
       if (value.length == 0) {
         continue;
       }
-      if (value == '.') {
+      if (value == ".") {
         continue;
-      } else if (value == '..') {
+      } else if (value == "..") {
         result.pop();
         continue;
       }
       result.push(value);
     }
-    return '/' + result.join('/');
+    return "/" + result.join("/");
   } else {
     return pwd;
   }

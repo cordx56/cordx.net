@@ -10,6 +10,7 @@ const wrapperDivStyle = {
   justifyContent: "center",
   alignItems: "center",
   height: "100vh",
+  maxWidth: "100%",
 };
 
 const TerminalPage = () => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Works() {
   return (
@@ -8,7 +8,9 @@ export default function Works() {
       <ul className="list-disc pl-6 pb-4">
         <li>
           <h3 className="text-2xl">
-            <a href="https://tweetgen.cordx.net/" target="_blank">Tweet generator</a>
+            <a href="https://tweetgen.cordx.net/" target="_blank">
+              Tweet generator
+            </a>
             <small> (2019-2020)</small>
           </h3>
           <p>Markov-chain text generator</p>
@@ -18,14 +20,18 @@ export default function Works() {
       <ul className="list-disc pl-6 pb-4">
         <li>
           <h3 className="text-2xl">
-            <a href="https://silang.cordx.net/" target="_blank">SILang</a>
+            <a href="https://silang.cordx.net/" target="_blank">
+              SILang
+            </a>
             <small> (2019-2021)</small>
           </h3>
           <p>Simple Interpreter Language, silang interpreter implementation</p>
         </li>
         <li>
           <h3 className="text-2xl">
-            <a href="https://slip.cordx.net/" target="_blank">slip</a>
+            <a href="https://slip.cordx.net/" target="_blank">
+              slip
+            </a>
             <small> (2021)</small>
           </h3>
           <p>Small LIsP language compiler</p>
@@ -44,14 +50,21 @@ export default function Works() {
       <ul className="list-disc pl-6 pb-4">
         <li>
           <h3 className="text-2xl">
-            <a href="https://speakerdeck.com/cordx56/basic-lecture-of-git-and-github" target="_blank">
+            <a
+              href="https://speakerdeck.com/cordx56/basic-lecture-of-git-and-github"
+              target="_blank"
+            >
               Git/GitHub基礎講座
             </a>
             <small> (2018)</small>
           </h3>
-          <p>Basic lecture of Git &amp; GitHub<br />デジクリGit/GitHub基礎講座</p>
+          <p>
+            Basic lecture of Git &amp; GitHub
+            <br />
+            デジクリGit/GitHub基礎講座
+          </p>
         </li>
       </ul>
     </div>
-  )
+  );
 }

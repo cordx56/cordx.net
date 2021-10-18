@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import Icon from '../components/meishi/icon'
-import Profile from '../components/meishi/profile'
-import Links from '../components/meishi/links'
+import Head from "next/head";
+import Icon from "../components/meishi/icon";
+import Profile from "../components/meishi/profile";
+import Links from "../components/meishi/links";
 
 export default function IndexPage() {
-  return(
+  return (
     <div className="container flex flex-wrap justify-center items-center mx-auto min-h-screen">
       <Head>
         <title>cordx.net</title>
@@ -17,5 +17,5 @@ export default function IndexPage() {
         <Links />
       </div>
     </div>
-  )
+  );
 }

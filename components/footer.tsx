@@ -3,5 +3,5 @@ export default function Footer() {
     <div className="py-2 text-center border-t">
       <p>&copy; 2020 cordx56</p>
     </div>
-  )
+  );
 }

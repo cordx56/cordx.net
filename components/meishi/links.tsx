@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Links: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const Links: React.FC = () => {
         GitHub
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default Links
+export default Links;

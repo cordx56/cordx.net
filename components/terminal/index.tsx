@@ -183,13 +183,7 @@ const TerminalIndex = (props: Props) => {
       clearCommand,
     ]
   );
-  return (
-    <XTerm
-      ref={termRef}
-      onData={onData}
-      className={props.className}
-    />
-  );
+  return <XTerm ref={termRef} onData={onData} className={props.className} />;
 };
 
 export default TerminalIndex;
