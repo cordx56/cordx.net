@@ -1,9 +1,18 @@
 export const files = {
   home: {
     cordx56: {
-      profile: `# Kaoru@cordx56
+      "profile.txt": `# Kaoru@cordx56
 Bachelor of Engineering
 `,
+      works: {
+        "silang.link": "https://silang.cordx.net/\n",
+        "slip.link": "https://slip.cordx.net/\n",
+      },
+      contacts: {
+        "github.link": "https://github.com/cordx56\n",
+        "keybase.link": "https://keybase.io/cordx56\n",
+        "email.link": "mailto:cordx56@cordx.net\n",
+      },
     },
   },
 };

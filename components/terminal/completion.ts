@@ -1,6 +1,6 @@
 import { commands } from "./commands";
 import { getData } from "./files";
-import { getAbsolutePath } from "./pathtools";
+import { getAbsolutePath, getAbsolutePathArray } from "./pathtools";
 
 export const ld = (x: string, y: string): number => {
   if (x.length === 0) {
@@ -35,14 +35,27 @@ export const commandCompletion = (buffer: string): string => {
   return candidate;
 };
 export const fileCompletion = (pwd: string, buffer: string): string => {
-  let candidate = null;
-  let max = 0;
-  for (const property in getData(getAbsolutePath(pwd, ""))) {
-    const sldvalue = sld(buffer, property);
-    if (max <= sldvalue) {
-      candidate = property;
-      max = sldvalue;
+  const absSplitted = getAbsolutePathArray(pwd, buffer);
+  let latestPath = "";
+  while (0 < absSplitted.length) {
+    latestPath = absSplitted.pop();
+    const data = getData("/" + absSplitted.join("/"));
+    if (data) {
+      let candidate = null;
+      let max = 0;
+      for (const property in data) {
+        const sldvalue = sld(latestPath, property);
+        if (max <= sldvalue) {
+          candidate = property;
+          max = sldvalue;
+        }
+      }
+      if (0 < absSplitted.length) {
+        return "/" + absSplitted.join("/") + "/" + candidate;
+      } else {
+        return candidate;
+      }
     }
   }
-  return candidate;
+  return "";
 };

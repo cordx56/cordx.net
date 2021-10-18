@@ -2,12 +2,15 @@ import { cd } from "./cd";
 import { ls } from "./ls";
 import { cat } from "./cat";
 import { whoami } from "./whoami";
+import { open } from "./open";
 import { Environment } from "../environment";
 
 export const commands = {
   cd: cd,
   ls: ls,
   cat: cat,
+  whoami: whoami,
+  open: open,
 };
 
 export const executeCommand = (
@@ -24,8 +27,10 @@ export const executeCommand = (
     return cat(env, args);
   } else if (command === "whoami") {
     return whoami(env, args);
+  } else if (command === "open") {
+    return open(env, args);
   } else {
-    env.terminal.writeln(`Error: Command not found`);
+    env.terminal.writeln(`Error: ${commands[0]} command not found`);
     return { terminal: env.terminal, pwd: env.pwd, lastReturn: 1 };
   }
 };

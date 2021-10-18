@@ -6,6 +6,7 @@ import Profile from "../components/profile";
 import Works from "../components/works";
 import Links from "../components/links";
 import Footer from "../components/footer";
+import styles from "../styles/terminal.module.css";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -14,13 +15,6 @@ config.autoAddCss = false;
 const Terminal = dynamic(() => import("../components/terminal"), {
   ssr: false,
 });
-
-const wrapperDivStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "100vh",
-};
 
 export default function IndexPage() {
   const [showTerminal, setShowTerminal] = useState(false);
@@ -48,20 +42,17 @@ export default function IndexPage() {
         </div>
         <div className="w-full px-4 mb-4 lg:w-1/2">
           <button
+            className="btn-blue"
             onClick={() => {
               setShowTerminal(!showTerminal);
             }}
           >
-            Show Terminal
+            {showTerminal ? "Hide Terminal" : "Show Terminal"}
           </button>
+          {showTerminal ? <Terminal className={styles.terminal} /> : null}
         </div>
       </div>
       <Footer />
-      {showTerminal ? (
-        <div style={wrapperDivStyle}>
-          <Terminal />
-        </div>
-      ) : null}
     </div>
   );
 }

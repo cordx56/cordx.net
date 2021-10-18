@@ -10,6 +10,10 @@ export const formatPath = (path: string): string => {
 };
 
 export const getAbsolutePath = (pwd: string, path: string): string => {
+  return "/" + getAbsolutePathArray(pwd, path).join("/");
+};
+
+export const getAbsolutePathArray = (pwd: string, path: string): string[] => {
   if (0 < path.length) {
     let joined: string;
     if (path[0] === "/") {
@@ -17,9 +21,9 @@ export const getAbsolutePath = (pwd: string, path: string): string => {
     } else {
       joined = pwd + "/" + path;
     }
-    const splited = joined.split("/");
+    const splitted = joined.split("/");
     const result = [];
-    for (const value of splited) {
+    for (const value of splitted) {
       if (value.length == 0) {
         continue;
       }
@@ -31,8 +35,9 @@ export const getAbsolutePath = (pwd: string, path: string): string => {
       }
       result.push(value);
     }
-    return "/" + result.join("/");
+    return result;
   } else {
-    return pwd;
+    const splitted = pwd.split("/");
+    return splitted.filter((value) => 0 < value.length);
   }
 };

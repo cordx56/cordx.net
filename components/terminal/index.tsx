@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { XTerm } from "xterm-for-react";
+import { FitAddon } from "xterm-addon-fit";
 import { executeCommand } from "./commands";
 import { Environment } from "./environment";
 import { commandCompletion, fileCompletion } from "./completion";
@@ -59,6 +60,10 @@ const TerminalIndex = (props: Props) => {
     };
     setEnv(newenv);
     if (newenv.terminal) {
+      const fitAddon = new FitAddon();
+      newenv.terminal.loadAddon(fitAddon);
+      fitAddon.fit();
+      showWelcomeMessage();
       showPrompt(newenv);
     }
   }, [termRef]);
@@ -89,6 +94,12 @@ const TerminalIndex = (props: Props) => {
     },
     [getTerm]
   );
+  const showWelcomeMessage = useCallback(() => {
+    getTerm().writeln("Welcome to cordx56 portfolio pseudo terminal!");
+    getTerm().writeln("Available commands: whoami, cd, ls, cat, open");
+    getTerm().writeln("Example: open works/slip.link");
+    getTerm().writeln("");
+  }, [getTerm]);
 
   const onData = useCallback(
     (e: string) => {
@@ -98,14 +109,16 @@ const TerminalIndex = (props: Props) => {
         if (0 < buffer.length) {
           setBuffer("");
           setCursorPos(0);
-          setHistory(history.concat([buffer]));
-          const result = executeCommand(env, parseCommand(buffer));
+          const command = buffer.trim();
+          setHistory(history.concat([command]));
+          const result = executeCommand(env, parseCommand(command));
           setEnv(result);
           showPrompt(result);
         } else {
           showPrompt(env);
         }
         setHistoryPos(history.length - 1);
+      } else if (e === "\n") {
       } else if (e === "\u007f") {
         // Backspace
         if (0 < cursorPos) {
@@ -121,6 +134,7 @@ const TerminalIndex = (props: Props) => {
           if (parsedCommand.length == 1) {
             const result = commandCompletion(parsedCommand[0]);
             setBuffer(result);
+            setCursorPos(result.length);
             getTerm().write(result);
           } else {
             const result = fileCompletion(
@@ -130,8 +144,10 @@ const TerminalIndex = (props: Props) => {
             const command = parsedCommand
               .slice(0, parsedCommand.length - 1)
               .join(" ");
-            setBuffer(`${command} ${result}`);
-            getTerm().write(`${command} ${result}`);
+            const newCommand = `${command} ${result}`;
+            setBuffer(newCommand);
+            setCursorPos(newCommand.length);
+            getTerm().write(newCommand);
           }
         }
       } else if (e === "\u001b[C") {

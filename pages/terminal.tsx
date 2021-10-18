@@ -1,5 +1,6 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import styles from "../styles/terminal.module.css";
 
 const Terminal = dynamic(() => import("../components/terminal"), {
   ssr: false,
@@ -10,7 +11,7 @@ const wrapperDivStyle = {
   justifyContent: "center",
   alignItems: "center",
   height: "100vh",
-  maxWidth: "100%",
+  width: "100%",
 };
 
 const TerminalPage = () => (
@@ -19,7 +20,7 @@ const TerminalPage = () => (
       <title>cordx.net - Terminal</title>
     </Head>
     <div style={wrapperDivStyle}>
-      <Terminal />
+      <Terminal className={styles.terminal} />
     </div>
   </>
 );
