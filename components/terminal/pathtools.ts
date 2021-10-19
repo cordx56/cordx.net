@@ -1,7 +1,9 @@
 export const homePath = "/home/cordx56";
 
+export const getPathArray = (path: string): string[] => path.split("/").filter((value) => 0 < value.length);
+
 export const formatPath = (path: string): string => {
-  const pathArray = path.split("/").filter((value) => 0 < value.length);
+  const pathArray = getPathArray(path);
   if (path[0] === "/") {
     return "/" + pathArray.join("/");
   } else {

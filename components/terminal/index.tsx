@@ -110,14 +110,16 @@ const TerminalIndex = (props: Props) => {
           setBuffer("");
           setCursorPos(0);
           const command = buffer.trim();
-          setHistory(history.concat([command]));
+          const newHistory = history.concat([command]);
+          setHistory(newHistory);
+          setHistoryPos(newHistory.length - 1);
           const result = executeCommand(env, parseCommand(command));
           setEnv(result);
           showPrompt(result);
         } else {
           showPrompt(env);
+          setHistoryPos(history.length - 1);
         }
-        setHistoryPos(history.length);
       } else if (e === "\n") {
       } else if (e === "\u007f") {
         // Backspace
