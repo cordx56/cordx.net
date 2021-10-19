@@ -94,12 +94,15 @@ const TerminalIndex = (props: Props) => {
     },
     [getTerm]
   );
-  const showWelcomeMessage = useCallback(() => {
-    getTerm().writeln("Welcome to cordx56 portfolio pseudo terminal!");
-    getTerm().writeln("Available commands: whoami, cd, ls, cat, open");
-    getTerm().writeln("Example: open works/slip.link");
-    getTerm().writeln("");
-  }, [getTerm]);
+  const showWelcomeMessage = useCallback(
+    () => {
+      getTerm().writeln("Welcome to cordx56 portfolio pseudo terminal!");
+      getTerm().writeln("Available commands: whoami, cd, ls, cat, open");
+      getTerm().writeln("Example: open works/slip.link");
+      getTerm().writeln("");
+    },
+    [getTerm]
+  );
 
   const onData = useCallback(
     (e: string) => {
@@ -117,7 +120,7 @@ const TerminalIndex = (props: Props) => {
         } else {
           showPrompt(env);
         }
-        setHistoryPos(history.length - 1);
+        setHistoryPos(history.length);
       } else if (e === "\n") {
       } else if (e === "\u007f") {
         // Backspace
@@ -164,19 +167,27 @@ const TerminalIndex = (props: Props) => {
         }
       } else if (e === "\u001b[A") {
         // Up Arrow
+        console.log(historyPos);
         if (0 <= historyPos) {
           clearCommand();
-          getTerm().write(history[historyPos]);
-          setBuffer(history[historyPos]);
-          setHistoryPos(historyPos - 1);
+          const command = history[historyPos];
+          getTerm().write(command);
+          setBuffer(command);
+          setCursorPos(command.length);
+          if (0 < historyPos) {
+            setHistoryPos(historyPos - 1);
+          }
         }
       } else if (e === "\u001b[B") {
         // Down Arrow
+        console.log(historyPos);
         clearCommand();
         if (historyPos < history.length - 1) {
-          setBuffer(history[historyPos + 1]);
+          const command = history[historyPos + 1];
+          getTerm().write(command);
+          setBuffer(command);
+          setCursorPos(command.length);
           setHistoryPos(historyPos + 1);
-          getTerm().write(history[historyPos + 1]);
         }
       } else {
         getTerm().write(e);
