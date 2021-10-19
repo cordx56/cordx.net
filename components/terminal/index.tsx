@@ -79,7 +79,7 @@ const TerminalIndex = (props: Props) => {
     for (let i = 0; i < buffer.length - cursorPos; i++) {
       getTerm().write("\b");
     }
-    for (let i = 0; i < buffer.length; i++) {
+    for (let i = 0; i < cursorPos; i++) {
       getTerm().write("\b \b");
     }
     setBuffer("");
@@ -94,15 +94,12 @@ const TerminalIndex = (props: Props) => {
     },
     [getTerm]
   );
-  const showWelcomeMessage = useCallback(
-    () => {
-      getTerm().writeln("Welcome to cordx56 portfolio pseudo terminal!");
-      getTerm().writeln("Available commands: whoami, cd, ls, cat, open");
-      getTerm().writeln("Example: open works/slip.link");
-      getTerm().writeln("");
-    },
-    [getTerm]
-  );
+  const showWelcomeMessage = useCallback(() => {
+    getTerm().writeln("Welcome to cordx56 portfolio pseudo terminal!");
+    getTerm().writeln("Available commands: whoami, cd, ls, cat, open");
+    getTerm().writeln("Example: open works/slip.link");
+    getTerm().writeln("");
+  }, [getTerm]);
 
   const onData = useCallback(
     (e: string) => {
@@ -125,9 +122,15 @@ const TerminalIndex = (props: Props) => {
       } else if (e === "\u007f") {
         // Backspace
         if (0 < cursorPos) {
-          setBuffer(buffer.slice(0, cursorPos - 1) + buffer.slice(cursorPos));
+          clearCommand();
+          const beforeCursor = buffer.slice(0, cursorPos - 1);
+          const afterCursor = buffer.slice(cursorPos);
+          setBuffer(beforeCursor + afterCursor);
           setCursorPos(cursorPos - 1);
-          getTerm().write("\b \b");
+          getTerm().write(beforeCursor + afterCursor);
+          for (let i = 0; i < afterCursor.length; i++) {
+            getTerm().write("\b");
+          }
         }
       } else if (e === "\t") {
         // Tab
@@ -167,7 +170,6 @@ const TerminalIndex = (props: Props) => {
         }
       } else if (e === "\u001b[A") {
         // Up Arrow
-        console.log(historyPos);
         if (0 <= historyPos) {
           clearCommand();
           const command = history[historyPos];
@@ -180,7 +182,6 @@ const TerminalIndex = (props: Props) => {
         }
       } else if (e === "\u001b[B") {
         // Down Arrow
-        console.log(historyPos);
         clearCommand();
         if (historyPos < history.length - 1) {
           const command = history[historyPos + 1];
@@ -190,8 +191,14 @@ const TerminalIndex = (props: Props) => {
           setHistoryPos(historyPos + 1);
         }
       } else {
-        getTerm().write(e);
-        setBuffer(buffer.slice(0, cursorPos) + e + buffer.slice(cursorPos));
+        clearCommand();
+        const beforeCursor = buffer.slice(0, cursorPos);
+        const afterCursor = buffer.slice(cursorPos);
+        getTerm().write(beforeCursor + e + afterCursor);
+        for (let i = 0; i < afterCursor.length; i++) {
+          getTerm().write("\b");
+        }
+        setBuffer(beforeCursor + e + afterCursor);
         setCursorPos(cursorPos + e.length);
       }
     },
