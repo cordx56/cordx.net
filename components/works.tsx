@@ -8,7 +8,11 @@ export default function Works() {
       <ul className="list-disc pl-6 pb-4">
         <li>
           <h3 className="text-2xl">
-            <a href="https://tweetgen.cordx.net/" target="_blank">
+            <a
+              href="https://tweetgen.cordx.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Tweet generator
             </a>
             <small> (2019-2020)</small>
@@ -20,7 +24,11 @@ export default function Works() {
       <ul className="list-disc pl-6 pb-4">
         <li>
           <h3 className="text-2xl">
-            <a href="https://silang.cordx.net/" target="_blank">
+            <a
+              href="https://silang.cordx.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
               SILang
             </a>
             <small> (2019-2021)</small>
@@ -29,7 +37,7 @@ export default function Works() {
         </li>
         <li>
           <h3 className="text-2xl">
-            <a href="https://slip.cordx.net/" target="_blank">
+            <a href="https://slip.cordx.net/" target="_blank" rel="noreferrer">
               slip
             </a>
             <small> (2021)</small>
@@ -38,7 +46,11 @@ export default function Works() {
         </li>
         <li>
           <h3 className="text-2xl">
-            <a href="https://digico.cordx.net/" target="_blank">
+            <a
+              href="https://digico.cordx.net/"
+              target="_blank"
+              rel="noreferrer"
+            >
               digiCo NLP
             </a>
             <small> (2018-2019)</small>
@@ -53,6 +65,7 @@ export default function Works() {
             <a
               href="https://speakerdeck.com/cordx56/basic-lecture-of-git-and-github"
               target="_blank"
+              rel="noreferrer"
             >
               Git/GitHub基礎講座
             </a>

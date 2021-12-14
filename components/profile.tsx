@@ -37,6 +37,7 @@ export default function Profile() {
               <a
                 href="https://cordx56.hatenablog.com/entry/2020/08/31/104330"
                 target="_blank"
+                rel="noreferrer"
               >
                 Hatena Summer Internship
               </a>
@@ -56,6 +57,7 @@ export default function Profile() {
               <a
                 href="https://cordx56.hatenablog.com/entry/2021/09/10/185455"
                 target="_blank"
+                rel="noreferrer"
               >
                 DMM GUILD (Internship)
               </a>

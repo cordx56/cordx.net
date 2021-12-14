@@ -18,6 +18,7 @@ export default function Jumbotron() {
                   className="text-teal-500 hover:text-teal-700"
                   href="https://github.com/cordx56"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FontAwesomeIcon icon={faGithub} /> GitHub
                 </a>
