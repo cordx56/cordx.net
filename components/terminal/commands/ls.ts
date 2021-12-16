@@ -27,11 +27,21 @@ export const ls = (env: Environment, args: string[]): Environment => {
         env.terminal.writeln("");
       } else if (data === null) {
         env.terminal.writeln(`Error: ${value} is not a file or directory`);
-        return { terminal: env.terminal, pwd: env.pwd, lastReturn: 2 };
+        return {
+          terminal: env.terminal,
+          pwd: env.pwd,
+          lastReturn: 2,
+          onDataPassFunction: null,
+        };
       } else {
         env.terminal.writeln(value);
       }
     }
   }
-  return { terminal: env.terminal, pwd: env.pwd, lastReturn: 0 };
+  return {
+    terminal: env.terminal,
+    pwd: env.pwd,
+    lastReturn: 0,
+    onDataPassFunction: null,
+  };
 };

@@ -3,6 +3,7 @@ import { ls } from "./ls";
 import { cat } from "./cat";
 import { whoami } from "./whoami";
 import { open } from "./open";
+import { silangCommand } from "./silang";
 import { Environment } from "../environment";
 
 export const commands = {
@@ -11,6 +12,7 @@ export const commands = {
   cat: cat,
   whoami: whoami,
   open: open,
+  silang: silangCommand,
 };
 
 export const executeCommand = (
@@ -29,8 +31,15 @@ export const executeCommand = (
     return whoami(env, args);
   } else if (command === "open") {
     return open(env, args);
+  } else if (command === "silang") {
+    return silangCommand(env, args);
   } else {
     env.terminal.writeln(`Error: ${commands[0]} command not found`);
-    return { terminal: env.terminal, pwd: env.pwd, lastReturn: 1 };
+    return {
+      terminal: env.terminal,
+      pwd: env.pwd,
+      lastReturn: 1,
+      onDataPassFunction: null,
+    };
   }
 };

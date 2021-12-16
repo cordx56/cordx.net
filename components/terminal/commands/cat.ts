@@ -9,8 +9,18 @@ export const cat = (env: Environment, args: string[]): Environment => {
       env.terminal.write(data.replace(/\n/g, "\r\n"));
     } else {
       env.terminal.writeln(`Error: ${value} is not a file`);
-      return { terminal: env.terminal, pwd: env.pwd, lastReturn: 2 };
+      return {
+        terminal: env.terminal,
+        pwd: env.pwd,
+        lastReturn: 2,
+        onDataPassFunction: null,
+      };
     }
   }
-  return { terminal: env.terminal, pwd: env.pwd, lastReturn: 0 };
+  return {
+    terminal: env.terminal,
+    pwd: env.pwd,
+    lastReturn: 0,
+    onDataPassFunction: null,
+  };
 };

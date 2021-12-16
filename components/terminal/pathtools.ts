@@ -1,6 +1,7 @@
 export const homePath = "/home/cordx56";
 
-export const getPathArray = (path: string): string[] => path.split("/").filter((value) => 0 < value.length);
+export const getPathArray = (path: string): string[] =>
+  path.split("/").filter((value) => 0 < value.length);
 
 export const formatPath = (path: string): string => {
   const pathArray = getPathArray(path);

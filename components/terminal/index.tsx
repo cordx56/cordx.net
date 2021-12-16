@@ -51,12 +51,14 @@ const TerminalIndex = (props: Props) => {
     terminal: termRef.current?.terminal,
     pwd: homePath,
     lastReturn: 0,
+    onDataPassFunction: null,
   });
   useEffect(() => {
     const newenv = {
       terminal: termRef.current?.terminal,
       pwd: env.pwd,
       lastReturn: env.lastReturn,
+      onDataPassFunction: null,
     };
     setEnv(newenv);
     if (newenv.terminal) {
@@ -96,13 +98,32 @@ const TerminalIndex = (props: Props) => {
   );
   const showWelcomeMessage = useCallback(() => {
     getTerm().writeln("Welcome to cordx56 portfolio pseudo terminal!");
-    getTerm().writeln("Available commands: whoami, cd, ls, cat, open");
+    getTerm().writeln("Available commands: whoami, cd, ls, cat, open, silang");
     getTerm().writeln("Example: open works/slip.link");
     getTerm().writeln("");
   }, [getTerm]);
 
   const onData = useCallback(
     (e: string) => {
+      if (e === "\x03") {
+        const newenv = {
+          terminal: env.terminal,
+          pwd: env.pwd,
+          lastReturn: 130,
+          onDataPassFunction: null,
+        };
+        setEnv(newenv);
+        showPrompt(newenv);
+        return;
+      }
+      if (env.onDataPassFunction) {
+        const result = env.onDataPassFunction(env, e);
+        setEnv(result);
+        if (!result.onDataPassFunction) {
+          showPrompt(result);
+        }
+        return;
+      }
       if (e === "\r") {
         // Enter
         getTerm().write("\r\n");
@@ -115,7 +136,9 @@ const TerminalIndex = (props: Props) => {
           setHistoryPos(newHistory.length - 1);
           const result = executeCommand(env, parseCommand(command));
           setEnv(result);
-          showPrompt(result);
+          if (!result.onDataPassFunction) {
+            showPrompt(result);
+          }
         } else {
           showPrompt(env);
           setHistoryPos(history.length - 1);
