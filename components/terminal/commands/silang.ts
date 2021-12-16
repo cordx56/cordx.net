@@ -24,7 +24,6 @@ export const silangOnDataPass = (
       buffer = "";
       env.terminal.write("> ");
     } else {
-      console.log(buffer);
       env.terminal.write(". ");
     }
   } else if (data === "\u007f") {
