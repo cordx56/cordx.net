@@ -4,7 +4,7 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 export default function Jumbotron() {
   return (
-    <div className="bg-gray-200 p-2">
+    <div className="bg-gray-200 dark:bg-gray-800 p-2">
       <div className="container flex flex-wrap mx-auto">
         <div className="w-full sm:w-1/4">
           {/* <img className="mx-auto" src="https://github.com/cordx56.png" /> */}

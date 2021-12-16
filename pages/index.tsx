@@ -19,7 +19,7 @@ const Terminal = dynamic(() => import("../components/terminal"), {
 export default function IndexPage() {
   const [showTerminal, setShowTerminal] = useState(false);
   return (
-    <div>
+    <div className="dark:bg-gray-900 dark:text-gray-200">
       <Head>
         <title>cordx.net</title>
         <meta name="description" content="cordx56&amp;#39;s webpage" />
