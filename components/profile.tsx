@@ -63,6 +63,18 @@ export default function Profile() {
               </a>
             </td>
           </tr>
+          <tr className="border-b">
+            <td className="px-2 py-2">2021/11 - 2022/01</td>
+            <td className="px-2 py-2">
+              <a
+                href="https://cordx56.hatenablog.com/entry/2022/01/31/194235"
+                target="_blank"
+                rel="noreferrer"
+              >
+                pixiv internship
+              </a>
+            </td>
+          </tr>
 
           <tr className="border-b">
             <td colSpan={99} className="px-2 py-2">
