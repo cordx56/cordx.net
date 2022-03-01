@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faKeybase } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import Wishlists from "./wishlists";
 
 export default function Links() {
   return (
@@ -22,6 +23,8 @@ export default function Links() {
           <FontAwesomeIcon icon={faEnvelope} /> cordx56@cordx.net
         </a>
       </h4>
+      <h2 className="text-2xl">Wishlists</h2>
+      <Wishlists />
     </div>
   );
 }
