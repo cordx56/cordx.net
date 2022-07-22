@@ -45,7 +45,7 @@ export default function Profile() {
             </td>
           </tr>
           <tr className="border-b">
-            <td className="px-2 py-2">2020/08 - Present</td>
+            <td className="px-2 py-2">2020/08 - 2022/05</td>
             <td className="px-2 py-2">
               Gaiax Internship
               <small> (Django/React/TypeScript/Vue.js/AWS)</small>
@@ -72,6 +72,18 @@ export default function Profile() {
                 rel="noreferrer"
               >
                 pixiv internship
+              </a>
+            </td>
+          </tr>
+          <tr className="border-b">
+            <td className="px-2 py-2">2022/02 - 2022/03</td>
+            <td className="px-2 py-2">
+              <a
+                href="https://cordx56.hatenablog.com/entry/2022/03/28/203002"
+                target="_blank"
+                rel="noreferrer"
+              >
+                mixi internship
               </a>
             </td>
           </tr>
