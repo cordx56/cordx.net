@@ -1,3 +1,0 @@
-[submodule "silang-wasm"]
-	path = silang-wasm
-	url = https://github.com/cordx56/silang-wasm.git

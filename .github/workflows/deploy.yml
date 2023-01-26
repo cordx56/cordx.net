@@ -3,38 +3,22 @@ name: Deploy gh-pages
 on:
   push:
     branches:
-      - source
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 1
-          submodules: recursive
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Setup wasm-pack
-        run: cargo install wasm-pack
-      - name: Build silang-wasm
-        run: wasm-pack build
-        working-directory: silang-wasm
-
-      - name: Setup
-        run: yarn install
-      - name: Build
-        run: yarn build
-      - name: Export
-        run: yarn export
-
+          node-version: 16
+      - run: yarn install
+      - run: yarn build
+      - run: yarn export
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: source
-          BRANCH: master
-          FOLDER: out
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out

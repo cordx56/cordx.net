@@ -1,9 +1,6 @@
-module.exports = {
-  webpack: (config, { isServer }) => {
-    config.experiments = {
-      asyncWebAssembly: true,
-    };
-    return config;
-  },
-  trailingSlash: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
 }
+
+module.exports = nextConfig

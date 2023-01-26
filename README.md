@@ -1,6 +1,6 @@
-# cordx56.github.io ![](https://github.com/cordx56/cordx56.github.io/workflows/Deploy%20gh-pages/badge.svg)
+# cordx56.github.io ![deploy](https://github.com/cordx56/cordx56.github.io/actions/workflows/deploy.yml/badge.svg)
 
-> cordx56&#39;s webpage
+> cordx services webpage
 
 ## Build Setup
 

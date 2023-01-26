@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-contents {
+  @apply min-h-screen bg-zinc-200 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-200;
+}
+
+a {
+  @apply text-rose-500 hover:text-rose-700;
+}
+p {
+  @apply my-2;
+}
